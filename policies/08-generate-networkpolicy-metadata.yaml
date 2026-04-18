@@ -1,0 +1,29 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: generate-networkpolicy-metadata
+spec:
+  rules:
+    - name: block-metadata-service
+      match:
+        any:
+          - resources:
+              kinds:
+                - Namespace
+      generate:
+        apiVersion: networking.k8s.io/v1
+        kind: NetworkPolicy
+        name: block-cloud-metadata
+        namespace: "{{request.object.metadata.name}}"
+        synchronize: true
+        data:
+          spec:
+            podSelector: {}
+            policyTypes:
+              - Egress
+            egress:
+              - to:
+                  - ipBlock:
+                      cidr: 0.0.0.0/0
+                      except:
+                        - 169.254.169.254/32

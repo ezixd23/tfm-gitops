@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 01-disallow-root.yaml
+  - 02-disallow-privilege-escalation.yaml
+  - 03-restrict-image-registries.yaml
+  - 04-add-default-resources.yaml
+  - 05-add-default-securitycontext.yaml
+  - 06-add-readonly-rootfs.yaml
+  - 07-add-default-labels.yaml
+  - 08-generate-networkpolicy-metadata.yaml
