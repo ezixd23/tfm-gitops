@@ -10,3 +10,4 @@ resources:
   - 06-add-readonly-rootfs.yaml
   - 07-add-default-labels.yaml
   - 08-generate-networkpolicy-metadata.yaml
+  - 09-disallow-latest-tag.yaml
