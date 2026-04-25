@@ -35,3 +35,4 @@ spec:
       jqPathExpressions:
         - '.spec.rules[].skipBackgroundRequests'
         - '.spec.rules[].generate.synchronize'
+        - '.spec.rules[].validate.allowExistingViolations'
