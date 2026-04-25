@@ -20,3 +20,18 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
+  ignoreDifferences:
+    - group: kyverno.io
+      kind: ClusterPolicy
+      jsonPointers:
+        - /spec/admission
+        - /spec/background
+        - /spec/emitWarning
+        - /spec/mutateExistingOnPolicyUpdate
+        - /spec/validationFailureAction
+        - /spec/schemaValidation
+        - /spec/webhookTimeoutSeconds
+        - /spec/failurePolicy
+      jqPathExpressions:
+        - '.spec.rules[].skipBackgroundRequests'
+        - '.spec.rules[].generate.synchronize'
