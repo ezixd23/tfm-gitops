@@ -5,6 +5,7 @@ metadata:
   namespace: demo-app
   labels:
     app: demo-app
+    experiment-trigger: "phase-2"
 spec:
   replicas: 2
   selector:
