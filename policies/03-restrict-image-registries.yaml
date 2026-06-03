@@ -30,3 +30,10 @@ spec:
                       - "alpine*"
                       - "busybox*"
                       - "nginxinc/*"
+      exclude:
+        any:
+          - resources:
+              namespaces:
+                - kyverno
+                - kube-system
+                - argocd

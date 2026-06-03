@@ -16,3 +16,10 @@ spec:
             labels:
               security.tfm/hardened-by: kyverno
               security.tfm/policy-version: "v1.0"
+      exclude:
+        any:
+          - resources:
+              namespaces:
+                - kyverno
+                - kube-system
+                - argocd

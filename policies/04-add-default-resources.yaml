@@ -22,3 +22,10 @@ spec:
                   limits:
                     cpu: "500m"
                     memory: "256Mi"
+      exclude:
+        any:
+          - resources:
+              namespaces:
+                - kyverno
+                - kube-system
+                - argocd

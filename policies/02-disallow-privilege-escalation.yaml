@@ -18,3 +18,10 @@ spec:
           containers:
           - securityContext:
               allowPrivilegeEscalation: false
+    exclude:
+        any:
+          - resources:
+              namespaces:
+                - kyverno
+                - kube-system
+                - argocd

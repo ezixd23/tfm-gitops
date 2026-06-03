@@ -18,3 +18,10 @@ spec:
         spec:
           securityContext:
             runAsNonRoot: true
+    exclude:
+        any:
+          - resources:
+              namespaces:
+                - kyverno
+                - kube-system
+                - argocd
