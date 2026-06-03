@@ -18,10 +18,10 @@ spec:
     spec:
       securityContext:
         runAsNonRoot: true
-        runAsUser: 101
+        runAsUser: 10001
       containers:
         - name: nginx
-          image: nginxinc/nginx-unprivileged:1.27-alpine
+          image: quay.io/ezixd23/tfm-demo-app@sha256:6279046da2c79968c830f6e73002bcaf554e2e6cabc86c6163c021f8d355e610
           ports:
             - containerPort: 8080
               name: http
