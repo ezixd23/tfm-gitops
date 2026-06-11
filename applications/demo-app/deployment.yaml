@@ -21,7 +21,7 @@ spec:
         runAsUser: 10001
       containers:
         - name: nginx
-          image: quay.io/zelkarrabi/tfm-demo-app:d8ae0bd
+          image: quay.io/zelkarrabi/tfm-demo-app:19a7aa5
           ports:
             - containerPort: 8080
               name: http
